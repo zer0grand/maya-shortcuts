@@ -2,7 +2,7 @@ import maya.cmds as cmds
 selected = cmds.ls(sl=True,long=True)
 if len(selected) > 1:
     result = cmds.promptDialog(
-                    title='Rename Object',
+                    title='Transfer Attributes',
                     message='Enter Name:',
                     button=['OK', 'Cancel'],
                     defaultButton='OK',
