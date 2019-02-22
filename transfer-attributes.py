@@ -2,7 +2,7 @@ import maya.cmds as cmds
 selected = cmds.ls(sl=True,long=True)
 if len(selected) > 1:
     result = cmds.promptDialog(
-                    title='Transfer Attributes',
+                    title='Copy Attributes',
                     message='Enter Name:',
                     button=['OK', 'Cancel'],
                     defaultButton='OK',
@@ -21,3 +21,4 @@ if len(selected) > 1:
                 cmds.xform(selected[-1], ro=cmds.xform(selected[-2], q=True, ws=absolute, ro=True), ws=absolute)
             if 'r' in input:
                 cmds.xform(selected[-1], s=cmds.xform(selected[-2], q=True, ws=absolute, s=True), ws=absolute)
+            cmds.select(selected[-1])
