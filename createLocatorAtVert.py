@@ -9,13 +9,13 @@ for s in sel:
         end = int(s[ind+1:-1])
         for obj in range(start, end+1):
             pos = cmds.pointPosition(s[:indStart] + "["+ str(obj) +"]")
-            newLoc = cmds.spaceLocator(position=pos)
-            
+            newLoc = cmds.spaceLocator()
+            cmds.move(pos[0], pos[1], pos[2], newLoc)
             locGroup += newLoc
     else:        
         pos = cmds.pointPosition(s)
         newLoc = cmds.spaceLocator(position=pos)
-        
+        cmds.move(pos[0], pos[1], pos[2], newLoc)
         locGroup += newLoc
 
 cmds.group(locGroup)
