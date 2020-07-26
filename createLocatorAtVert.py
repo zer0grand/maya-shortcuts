@@ -1,5 +1,5 @@
 sel = cmds.ls( selection=True )
-selPos = []
+locGroup = []
 
 for s in sel:
     ind = s.find(":")
@@ -11,11 +11,11 @@ for s in sel:
             pos = cmds.pointPosition(s[:indStart] + "["+ str(obj) +"]")
             newLoc = cmds.spaceLocator(position=pos)
             
-            print(pos)
-            selPos += pos
+            locGroup += newLoc
     else:        
         pos = cmds.pointPosition(s)
         newLoc = cmds.spaceLocator(position=pos)
         
-        print(pos)
-        selPos += pos
+        locGroup += newLoc
+
+cmds.group(locGroup)
