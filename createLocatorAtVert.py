@@ -14,7 +14,7 @@ for s in sel:
             locGroup += newLoc
     else:        
         pos = cmds.pointPosition(s)
-        newLoc = cmds.spaceLocator(position=pos)
+        newLoc = cmds.spaceLocator()
         cmds.move(pos[0], pos[1], pos[2], newLoc)
         locGroup += newLoc
 
