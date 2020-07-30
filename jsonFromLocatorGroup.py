@@ -10,6 +10,6 @@ for group in groups:
     for locator in locators:        
         subGroupContainer.append(cmds.xform(locator, q=True, t=True, ws=True))
         
-    exportObj["groups"].append({"loop":False, "width":.05, "points":subGroupContainer})
+    exportObj["groups"].append({"loop":True, "width":.05, "points":subGroupContainer})
     
 print(json.dumps(exportObj, indent=2))
