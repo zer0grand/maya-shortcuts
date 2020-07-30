@@ -1,4 +1,8 @@
-sel = cmds.ls( selection=True )
+### WARNING ###
+# execute the following command before you select an object, then after you have made your selection run the rest
+cmds.selectPref(trackSelectionOrder=True)
+###
+sel = cmds.ls( os=True )
 locGroup = []
 
 for s in sel:
